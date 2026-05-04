@@ -25,6 +25,10 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
+    - name: 현재 작업 폴더 목록 풀력
+      run: |
+        ls -al
+
     - name: Build Docker image
       run: |
         docker build -t $IMAGE_NAME:${{ github.sha }} echo-hostname/.
